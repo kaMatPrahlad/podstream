@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import PodcastCard from "../components/PodcastCard";
 
 const DashboardMain = styled.div`
   padding: 20px 30px;
@@ -57,7 +58,11 @@ const Dashboard = () => {
             <Span>Show All</Span>
           </Link>
         </Topic>
-        <Podcasts>Hi</Podcasts>
+        <Podcasts>
+          <PodcastCard />
+          <PodcastCard />
+          <PodcastCard />
+        </Podcasts>
       </FilterContainer>
 
       <FilterContainer>
@@ -67,7 +72,10 @@ const Dashboard = () => {
             <Span>Show All</Span>
           </Link>
         </Topic>
-        <Podcasts>Hi</Podcasts>
+        <Podcasts>
+          <PodcastCard />
+          <PodcastCard />
+        </Podcasts>
       </FilterContainer>
     </DashboardMain>
   );
