@@ -100,7 +100,12 @@ const CreatersInfo = styled.div`
   gap: 8px;
   margin-top: 6px;
 `;
-const Creator = styled.div``;
+const Creator = styled.div`
+  display: flex;
+  gap: 8px;
+  align-items: center;
+`;
+
 const CreatorName = styled.div`
   font-size: 12px;
   overflow: hidden;
@@ -117,33 +122,38 @@ const Views = styled.div`
 const PodcastCard = () => {
   return (
     <Card>
-      <Top>
-        <Favorite>
-          <FavoriteIcon />
-        </Favorite>
-        <CardImage src="https://media.istockphoto.com/id/1283532997/vector/podcast-concept-thin-line-icon-abstract-icon-abstract-gradient-background-modern-sound-wave.jpg?s=612x612&w=0&k=20&c=YLg7rHeSuYqeIuGRAcvf2a7J8X8Sx-IkmqYHXIJGPYQ=" />
-      </Top>
+      <div>
+        <Top>
+          <Favorite>
+            <FavoriteIcon style={{ width: "16px", height: "16px" }} />
+          </Favorite>
+          <CardImage src="https://media.istockphoto.com/id/1283532997/vector/podcast-concept-thin-line-icon-abstract-icon-abstract-gradient-background-modern-sound-wave.jpg?s=612x612&w=0&k=20&c=YLg7rHeSuYqeIuGRAcvf2a7J8X8Sx-IkmqYHXIJGPYQ=" />
+        </Top>
 
-      <CardInformation>
-        <MainInfo>
-          <Title>The Tim Ferris Show</Title>
-          <Descryption>
-            Lorem ipsum dolor sit, amet consectetur adipisici perspiciatis nisi
-            minus dolor repudiandae aut nostrum in! Maiores minima molestiae in
-            rem ut s quas animi omnis harum temporibus, magnam aliquam li fuga
-            reiciendis nisi est ad. Adipisci odio unde, nec ratione hic impedit
-            facere?
-          </Descryption>
-          <CreatersInfo>
-            <Creator>
-              <Avatar>P</Avatar>
-              <CreatorName>Prahlad</CreatorName>
-            </Creator>
+        <CardInformation>
+          <MainInfo>
+            <Title>The Tim Ferris Show</Title>
+            <Descryption>
+              Lorem ipsum dolor sit, amet consectetur adipisici perspiciatis
+              nisi minus dolor repudiandae aut nostrum in! Maiores minima
+              molestiae in rem ut s quas animi omnis harum temporibus, magnam
+              aliquam li fuga reiciendis nisi est ad. Adipisci odio unde, nec
+              ratione hic impedit facere?
+            </Descryption>
+            <CreatersInfo>
+              <Creator>
+                <Avatar style={{ width: "26px", height: "26px" }}>P</Avatar>
+                <CreatorName>Prahlad</CreatorName>
+              </Creator>
 
-            <Views>12 Views</Views>
-          </CreatersInfo>
-        </MainInfo>
-      </CardInformation>
+              <Views>12 Views</Views>
+            </CreatersInfo>
+          </MainInfo>
+        </CardInformation>
+      </div>
+      <Playicon>
+        <HeadphonesIcon />
+      </Playicon>
     </Card>
   );
 };
