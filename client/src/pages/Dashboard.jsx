@@ -23,13 +23,25 @@ const FilterContainer = styled.div`
 `;
 const Topic = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   color: ${({ theme }) => theme.text_primary};
   font-size: 24px;
   font-weight: 500;
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
-const Span = styled.div``;
+const Span = styled.div`
+  display: flex;
+  color: ${({ theme }) => theme.primary};
+  font-size: 16px;
+  font-weight: 400;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+`;
 const Podcasts = styled.div``;
 
 const Dashboard = () => {
@@ -38,7 +50,20 @@ const Dashboard = () => {
       <FilterContainer>
         <Topic>
           Most Popular
-          <Link>
+          <Link
+            to={`/showpodcasts/mostpopular`}
+            style={{ textDecoration: "none" }}
+          >
+            <Span>Show All</Span>
+          </Link>
+        </Topic>
+        <Podcasts>Hi</Podcasts>
+      </FilterContainer>
+
+      <FilterContainer>
+        <Topic>
+          Comedy
+          <Link to={`/showpodcasts/comedy`} style={{ textDecoration: "none" }}>
             <Span>Show All</Span>
           </Link>
         </Topic>
