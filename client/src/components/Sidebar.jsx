@@ -7,8 +7,8 @@ import {
   FavoriteRounded,
   LightModeRounded,
   LogoutRounded,
-  UploadRounded,
   DarkModeRounded,
+  CloudUpload,
 } from "@mui/icons-material";
 import LOGOImage from "../Images/Logo.png";
 import { Link } from "react-router-dom";
@@ -33,11 +33,13 @@ const MenuContainer = styled.div`
 `;
 
 const Flex = styled.div`
-  justify-content: space-between;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
   padding: 0px 16px;
-  width: 86%;
+  // width: 100%;
 `;
 
 const Logo = styled.div`
@@ -81,7 +83,7 @@ const NavText = styled.div`
 const HR = styled.div`
 width: 100%;
 height: 1px;
-background-color: ${({ theme }) => theme.text_secondary};
+background-color: ${({ theme }) => theme.text_secondary + 50};
 margin:"10px 0px;
 `;
 const Image = styled.img`
@@ -110,7 +112,8 @@ const Sidebar = ({ MenuOpen, setMenuOpen, setDarkMode, darkMode }) => {
     {
       fun: () => console.log("Upload"),
       name: "Upload",
-      icon: <UploadRounded />,
+      // icon: <UploadRounded />,
+      icon: <CloudUpload />,
     },
     {
       fun: () => setDarkMode(!darkMode),
@@ -129,7 +132,7 @@ const Sidebar = ({ MenuOpen, setMenuOpen, setDarkMode, darkMode }) => {
       <Flex>
         <Logo>
           <Image src={LOGOImage} />
-          PodStream
+          PODSTREAM
         </Logo>
         <Close onClick={() => setMenuOpen(false)}>
           <CloseRounded />
