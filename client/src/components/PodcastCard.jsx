@@ -71,32 +71,68 @@ const MainInfo = styled.div`
   justify-content: flex-start;
   gap: 4px;
 `;
-const Title = styled.div``;
-const Descryption = styled.div``;
-const CreatersInfo = styled.div``;
+const Title = styled.div`
+  overflow: hidden;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: ${({ theme }) => theme.text_primary};
+`;
+const Descryption = styled.div`
+  overflow: hidden;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: ${({ theme }) => theme.text_secondary};
+  font-size: 12px;
+`;
+
+const CreatersInfo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 6px;
+`;
 const Creator = styled.div``;
-const CreatorName = styled.div``;
-const Views = styled.div``;
+const CreatorName = styled.div`
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: ${({ theme }) => theme.text_secondary};
+`;
+const Views = styled.div`
+  font-size: 10px;
+  color: ${({ theme }) => theme.text_secondary};
+  width: max-content;
+`;
 
 const PodcastCard = () => {
   return (
     <Card>
       <Top>
-        <Favorite></Favorite>
-        <FavoriteIcon />
-        <CardImage src="https://png.pngtree.com/png-clipart/20210219/ourmid/pngtree-red-headphones-mike-music-radio-logo-png-image_2913097.jpg" />
+        <Favorite>
+          <FavoriteIcon />
+        </Favorite>
+        <CardImage src="https://media.istockphoto.com/id/1283532997/vector/podcast-concept-thin-line-icon-abstract-icon-abstract-gradient-background-modern-sound-wave.jpg?s=612x612&w=0&k=20&c=YLg7rHeSuYqeIuGRAcvf2a7J8X8Sx-IkmqYHXIJGPYQ=" />
       </Top>
 
       <CardInformation>
         <MainInfo>
           <Title>The Tim Ferris Show</Title>
           <Descryption>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores
-            perspiciatis nisi minus dolor repudiandae aut asperiores odit
-            nostrum in! Maiores minima molestiae in rem ut suscipit quo? Vel
-            quas animi omnis harum temporibus, magnam aliquam libero eum facilis
-            fuga reiciendis nisi est ad. Adipisci odio unde, necessitatibus quos
-            ratione hic impedit facere?
+            Lorem ipsum dolor sit, amet consectetur adipisici perspiciatis nisi
+            minus dolor repudiandae aut nostrum in! Maiores minima molestiae in
+            rem ut s quas animi omnis harum temporibus, magnam aliquam li fuga
+            reiciendis nisi est ad. Adipisci odio unde, nec ratione hic impedit
+            facere?
           </Descryption>
           <CreatersInfo>
             <Creator>
