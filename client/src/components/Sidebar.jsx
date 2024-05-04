@@ -1,6 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { HomeRounded, CloseRounded } from "@mui/icons-material";
+import {
+  HomeRounded,
+  CloseRounded,
+  SearchRounded,
+  FavoriteRounded,
+  LightModeRounded,
+  LogoutRounded,
+  UploadRounded,
+} from "@mui/icons-material";
 import LOGOImage from "../Images/Logo.png";
 import { Link } from "react-router-dom";
 
@@ -61,6 +69,7 @@ const Elements = styled.div`
   align-items: center;
   gap: 12px;
   cursor: pointer;
+  text-decoration: none !important;
   color: ${({ theme }) => theme.text_secondary};
   width: 100%;
   &:hover {
@@ -69,8 +78,51 @@ const Elements = styled.div`
 `;
 const NavText = styled.div`
   padding: 12px 0px;
-  text-decoration: none;
+  text-decoration: none !important;
 `;
+const HR = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: ${({ theme }) => theme.text_secondary};
+  margin:"10px 0px;
+  `;
+
+const menuItems = [
+  {
+    link: "/",
+    name: "Dashboard",
+    icon: <HomeRounded />,
+  },
+  {
+    link: "/search",
+    name: "Search",
+    icon: <SearchRounded />,
+  },
+  {
+    link: "/favourites",
+    name: "Favourites",
+    icon: <FavoriteRounded />,
+  },
+];
+const button = [
+  {
+    fun: () => console.log("Upload"),
+    name: "Upload",
+    icon: <UploadRounded />,
+  },
+  {
+    fun: () => console.log("Upload"),
+
+    name: "Light Mode",
+    icon: <LightModeRounded />,
+  },
+  {
+    fun: () => console.log("Upload"),
+
+    name: "Log Out",
+    icon: <LogoutRounded />,
+  },
+];
 
 const Sidebar = () => {
   return (
@@ -84,12 +136,22 @@ const Sidebar = () => {
           <CloseRounded />
         </Close>
       </Flex>
-      <Link to="/">
-        <Elements>
-          <HomeRounded />
-          <NavText>Dashboard</NavText>
+      {menuItems.map((item) => (
+        <Link key={item.id} to={item.link} style={{ textDecoration: "none" }}>
+          <Elements>
+            {item.icon}
+            <NavText>{item.name}</NavText>
+          </Elements>
+        </Link>
+      ))}
+
+      <HR />
+      {button.map((item) => (
+        <Elements onClick={item.fun}>
+          {item.icon}
+          <NavText>{item.name}</NavText>
         </Elements>
-      </Link>
+      ))}
     </MenuContainer>
   );
 };
