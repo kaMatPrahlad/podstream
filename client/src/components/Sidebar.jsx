@@ -8,6 +8,7 @@ import {
   LightModeRounded,
   LogoutRounded,
   UploadRounded,
+  DarkModeRounded,
 } from "@mui/icons-material";
 import LOGOImage from "../Images/Logo.png";
 import { Link } from "react-router-dom";
@@ -26,7 +27,7 @@ const MenuContainer = styled.div`
       z-index: 1000;
       width: 100%;
       max-width: 250px;
-      left: ${({ setMenuOpen }) => (setMenuOpen ? "0" : "")}
+      left: ${({ MenuOpen }) => (MenuOpen ? "0" : "-100%")}
       transition: 0.3s ease-in-out;
     }
 `;
@@ -49,9 +50,6 @@ const Logo = styled.div`
   font-weight: bold;
   font-size: 20px;
   margin: 16px 0px;
-`;
-const Image = styled.img`
-  height: 40px;
 `;
 
 const Close = styled.div`
@@ -81,58 +79,59 @@ const NavText = styled.div`
   text-decoration: none !important;
 `;
 const HR = styled.div`
-  width: 100%;
-  height: 1px;
-  background-color: ${({ theme }) => theme.text_secondary};
-  margin:"10px 0px;
-  `;
+width: 100%;
+height: 1px;
+background-color: ${({ theme }) => theme.text_secondary};
+margin:"10px 0px;
+`;
+const Image = styled.img`
+  height: 40px;
+`;
 
-const menuItems = [
-  {
-    link: "/",
-    name: "Dashboard",
-    icon: <HomeRounded />,
-  },
-  {
-    link: "/search",
-    name: "Search",
-    icon: <SearchRounded />,
-  },
-  {
-    link: "/favourites",
-    name: "Favourites",
-    icon: <FavoriteRounded />,
-  },
-];
-const button = [
-  {
-    fun: () => console.log("Upload"),
-    name: "Upload",
-    icon: <UploadRounded />,
-  },
-  {
-    fun: () => console.log("Upload"),
+const Sidebar = ({ MenuOpen, setMenuOpen, setDarkMode, darkMode }) => {
+  const menuItems = [
+    {
+      link: "/",
+      name: "Dashboard",
+      icon: <HomeRounded />,
+    },
+    {
+      link: "/search",
+      name: "Search",
+      icon: <SearchRounded />,
+    },
+    {
+      link: "/favourites",
+      name: "Favourites",
+      icon: <FavoriteRounded />,
+    },
+  ];
+  const button = [
+    {
+      fun: () => console.log("Upload"),
+      name: "Upload",
+      icon: <UploadRounded />,
+    },
+    {
+      fun: () => setDarkMode(!darkMode),
+      name: darkMode ? "Light Mode" : "Dark Mode",
+      icon: darkMode ? <LightModeRounded /> : <DarkModeRounded />,
+    },
+    {
+      fun: () => console.log("Upload"),
 
-    name: "Light Mode",
-    icon: <LightModeRounded />,
-  },
-  {
-    fun: () => console.log("Upload"),
-
-    name: "Log Out",
-    icon: <LogoutRounded />,
-  },
-];
-
-const Sidebar = () => {
+      name: "Log Out",
+      icon: <LogoutRounded />,
+    },
+  ];
   return (
-    <MenuContainer>
+    <MenuContainer MenuOpen={MenuOpen}>
       <Flex>
         <Logo>
           <Image src={LOGOImage} />
           PodStream
         </Logo>
-        <Close>
+        <Close onClick={() => setMenuOpen(false)}>
           <CloseRounded />
         </Close>
       </Flex>
