@@ -1,7 +1,8 @@
+import { Container } from "@mui/material";
 import React from "react";
 
 function Favourites() {
-  return <div>Favourite</div>;
+  return <Container>Favourite</Container>;
 }
 
 export default Favourites;

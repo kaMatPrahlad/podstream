@@ -43,7 +43,16 @@ const Span = styled.div`
     font-size: 14px;
   }
 `;
-const Podcasts = styled.div``;
+const Podcasts = styled.div`
+  width: 100%;
+  display: flex;
+  flexwrap: wrap;
+  gap: 14px;
+  padding: 18px 6px;
+  @media (max-width: 550px) {
+  justify-content: center;
+  }
+`;
 
 const Dashboard = () => {
   return (
