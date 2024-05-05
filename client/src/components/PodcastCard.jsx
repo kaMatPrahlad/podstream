@@ -3,9 +3,8 @@ import styled from "styled-components";
 import Avatar from "@mui/material/Avatar";
 import { IconButton } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import HeadphonesIcon from '@mui/icons-material/Headphones';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-
+import HeadphonesIcon from "@mui/icons-material/Headphones";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 const PlayIcon = styled.div`
   padding: 10px;
@@ -24,8 +23,6 @@ const PlayIcon = styled.div`
   transition: all 0.4s ease-in-out;
   box-shadow: 0 0 16px 4px #9000ff50 !important;
 `;
-
-
 
 const Card = styled.div`
   position: relative;
@@ -173,12 +170,13 @@ const PodcastCard = () => {
           </MainInfo>
         </CardInformation>
       </div>
-      <Playicon>
-      {podcast?.type === 'video' ?
-        <PlayArrowIcon style={{ width: '28px', height: '28px' }} />
-        :
-          <HeadphonesIcon style={{ width: '28px', height: '28px' }} />
-        }
+      <PlayIcon>
+        {podcast?.type === "video" ? (
+          <PlayArrowIcon style={{ width: "28px", height: "28px" }} />
+        ) : (
+          <HeadphonesIcon style={{ width: "28px", height: "28px" }} />
+        )}
+      </PlayIcon>
     </Card>
   );
 };
