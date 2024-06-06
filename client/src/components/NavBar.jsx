@@ -11,7 +11,7 @@ const NavBardiv = styled.div`
   align-items: center;
   color: ${({ theme }) => theme.text_primary};
   gap: 30px;
-  background: ${({ theme }) => theme.bgLight};
+  background: ${({ theme }) => theme.bgLight};  
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.7px);
   -webkit-backdrop-filter: blur(5.7px);
